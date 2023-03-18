@@ -1,12 +1,12 @@
-package com.example.githubsearchwithnavigation.ui
+package com.example.foodie.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.githubsearchwithnavigation.R
-import com.example.githubsearchwithnavigation.data.GitHubRepo
+import com.example.foodie.R
+import com.example.foodie.data.GitHubRepo
 
 /**
  * This is the constructor for a RecyclerView adapter for lists of GitHub repos.

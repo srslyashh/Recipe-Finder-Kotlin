@@ -1,4 +1,4 @@
-package com.example.githubsearchwithnavigation.data
+package com.example.foodie.data
 
 /**
  * This is the Repository class that manages data operations associated with the bookmarked repos

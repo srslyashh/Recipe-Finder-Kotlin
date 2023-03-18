@@ -1,4 +1,4 @@
-package com.example.githubsearchwithnavigation.data
+package com.example.foodie.data
 
 import android.content.Context
 import androidx.room.Database

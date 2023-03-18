@@ -1,4 +1,4 @@
-package com.example.githubsearchwithnavigation.data
+package com.example.foodie.data
 
 import androidx.room.Dao
 import androidx.room.Delete

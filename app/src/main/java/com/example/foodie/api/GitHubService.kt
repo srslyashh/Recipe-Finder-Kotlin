@@ -1,6 +1,6 @@
-package com.example.githubsearchwithnavigation.api
+package com.example.foodie.api
 
-import com.example.githubsearchwithnavigation.data.GitHubSearchResults
+import com.example.foodie.data.GitHubSearchResults
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory

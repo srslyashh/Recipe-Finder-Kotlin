@@ -1,25 +1,21 @@
-package com.example.githubsearchwithnavigation.ui
+package com.example.foodie.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.githubsearchwithnavigation.R
-import com.example.githubsearchwithnavigation.data.GitHubRepo
-import com.example.githubsearchwithnavigation.data.LoadingStatus
+import com.example.foodie.R
+import com.example.foodie.data.GitHubRepo
+import com.example.foodie.data.LoadingStatus
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
 class GitHubSearchFragment: Fragment(R.layout.github_search_fragment) {

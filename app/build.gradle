@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.githubsearchwithnavigation'
+    namespace 'com.example.foodie'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.githubsearchwithnavigation"
+        applicationId "com.example.foodie"
         minSdk 24
         targetSdk 33
         versionCode 1

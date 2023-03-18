@@ -1,13 +1,13 @@
-package com.example.githubsearchwithnavigation.ui
+package com.example.foodie.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.githubsearchwithnavigation.api.GitHubService
-import com.example.githubsearchwithnavigation.data.GitHubRepo
-import com.example.githubsearchwithnavigation.data.GitHubReposRepository
-import com.example.githubsearchwithnavigation.data.LoadingStatus
+import com.example.foodie.api.GitHubService
+import com.example.foodie.data.GitHubRepo
+import com.example.foodie.data.GitHubReposRepository
+import com.example.foodie.data.LoadingStatus
 import kotlinx.coroutines.launch
 
 class GitHubSearchViewModel: ViewModel() {

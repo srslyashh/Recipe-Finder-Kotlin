@@ -1,10 +1,10 @@
-package com.example.githubsearchwithnavigation.ui
+package com.example.foodie.ui
 
 import android.os.Bundle
 import androidx.preference.MultiSelectListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.example.githubsearchwithnavigation.R
+import com.example.foodie.R
 
 class SettingsFragment: PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {

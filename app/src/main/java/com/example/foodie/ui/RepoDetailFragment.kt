@@ -1,22 +1,19 @@
-package com.example.githubsearchwithnavigation.ui
+package com.example.foodie.ui
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.example.githubsearchwithnavigation.R
-import com.example.githubsearchwithnavigation.data.GitHubRepo
+import com.example.foodie.R
 import com.google.android.material.snackbar.Snackbar
 
 const val EXTRA_GITHUB_REPO = "GITHUB_REPO"

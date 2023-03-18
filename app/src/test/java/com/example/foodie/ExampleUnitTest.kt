@@ -1,4 +1,4 @@
-package com.example.githubsearchwithnavigation
+package com.example.foodie
 
 import org.junit.Test
 

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/github_search"
-        android:name="com.example.githubsearchwithnavigation.ui.GitHubSearchFragment"
+        android:name="com.example.foodie.ui.GitHubSearchFragment"
         android:label="@string/label_github_search">
         <action
             android:id="@+id/navigate_to_repo_detail"
@@ -15,16 +15,16 @@
 
     <fragment
         android:id="@+id/repo_detail"
-        android:name="com.example.githubsearchwithnavigation.ui.RepoDetailFragment"
+        android:name="com.example.foodie.ui.RepoDetailFragment"
         android:label="@string/label_repo_detail">
         <argument
             android:name="repo"
-            app:argType="com.example.githubsearchwithnavigation.data.GitHubRepo" />
+            app:argType="com.example.foodie.data.GitHubRepo" />
     </fragment>
 
     <fragment
         android:id="@+id/bookmarked_repos"
-        android:name="com.example.githubsearchwithnavigation.ui.BookmarkedReposFragment"
+        android:name="com.example.foodie.ui.BookmarkedReposFragment"
         android:label="@string/label_bookmarked_repos">
         <action
             android:id="@+id/navigate_to_repo_detail"
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/settings"
-        android:name="com.example.githubsearchwithnavigation.ui.SettingsFragment"
+        android:name="com.example.foodie.ui.SettingsFragment"
         android:label="@string/label_settings" />
 
 </navigation>
