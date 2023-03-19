@@ -14,15 +14,15 @@ import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodie.R
-import com.example.foodie.data.GitHubRepo
 import com.example.foodie.data.LoadingStatus
+import com.example.foodie.data.Recipe
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
-class GitHubSearchFragment: Fragment(R.layout.github_search_fragment) {
+class RecipeSearchFragment: Fragment(R.layout.recipe_search_fragment) {
     private val TAG = "MainActivity"
 
-    private val repoListAdapter = GitHubRepoListAdapter(::onGitHubRepoClick)
-    private val viewModel: GitHubSearchViewModel by viewModels()
+    private val simpleRecipeListAdapter = RecipeListAdapter(::onSimpleRecipeClick)
+    private val viewModel: RecipeSearchViewModel by viewModels()
 
     private lateinit var searchResultsListRV: RecyclerView
     private lateinit var searchErrorTV: TextView
@@ -46,14 +46,14 @@ class GitHubSearchFragment: Fragment(R.layout.github_search_fragment) {
         searchResultsListRV = view.findViewById(R.id.rv_search_results)
         searchResultsListRV.layoutManager = LinearLayoutManager(requireContext())
         searchResultsListRV.setHasFixedSize(true)
-        searchResultsListRV.adapter = repoListAdapter
+        searchResultsListRV.adapter = simpleRecipeListAdapter
 
         /*
          * Set up an observer on the current search results.  Every time the search results change,
          * send the new search results into the RecyclerView adapter to be displayed.
          */
         viewModel.searchResults.observe(viewLifecycleOwner) { searchResults ->
-            repoListAdapter.updateRepoList(searchResults)
+            simpleRecipeListAdapter.updateSimpleRecipeList(searchResults)
         }
 
         /*
@@ -91,33 +91,17 @@ class GitHubSearchFragment: Fragment(R.layout.github_search_fragment) {
             }
         }
 
-        /*
-         * Attach click listener to "search" button to perform repository search with GitHub API
-         * using the search query entered by the user.  Also use the values of the appropriate
-         * settings to influence the API call.
-         */
-        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         searchBtn.setOnClickListener {
             val query = searchBoxET.text.toString()
             if (!TextUtils.isEmpty(query)) {
-                val sort = prefs.getString(getString(R.string.pref_sort_key), null)
-                val user = prefs.getString(getString(R.string.pref_user_key), null)
-                val firstIssues = prefs.getInt(getString(R.string.pref_first_issues_key), 0)
-                val languages = prefs.getStringSet(getString(R.string.pref_language_key), null)
-                viewModel.loadSearchResults(query, sort, user, languages, firstIssues)
+                viewModel.searchRecipes(query)
                 searchResultsListRV.scrollToPosition(0)
             }
         }
     }
 
-    /**
-     * This method is passed into the RecyclerView adapter to handle clicks on individual items
-     * in the list of GitHub repos.  When a repo is clicked, a new activity is launched to view
-     * details about that repo.
-     */
-    private fun onGitHubRepoClick(repo: GitHubRepo) {
-        Log.d(TAG, "onGitHubRepoClick() called, repo: $repo")
-        val directions = GitHubSearchFragmentDirections.navigateToRepoDetail(repo)
+    private fun onSimpleRecipeClick(recipe: Recipe) {
+        val directions = RecipeSearchFragmentDirections.navigateToRecipeDetail(recipe)
         findNavController().navigate(directions)
     }
 }

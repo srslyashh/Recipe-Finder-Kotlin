@@ -2,38 +2,32 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_nav_graph"
-    app:startDestination="@id/github_search">
+    app:startDestination="@id/recipe_search">
 
     <fragment
-        android:id="@+id/github_search"
-        android:name="com.example.foodie.ui.GitHubSearchFragment"
-        android:label="@string/label_github_search">
+        android:id="@+id/recipe_search"
+        android:name="com.example.foodie.ui.RecipeSearchFragment"
+        android:label="@string/label_recipe_search">
         <action
-            android:id="@+id/navigate_to_repo_detail"
-            app:destination="@id/repo_detail" />
+            android:id="@+id/navigate_to_recipe_detail"
+            app:destination="@id/recipe_detail" />
     </fragment>
 
     <fragment
-        android:id="@+id/repo_detail"
-        android:name="com.example.foodie.ui.RepoDetailFragment"
-        android:label="@string/label_repo_detail">
+        android:id="@+id/recipe_detail"
+        android:name="com.example.foodie.ui.RecipeDetailFragment"
+        android:label="@string/label_recipe_detail">
         <argument
-            android:name="repo"
-            app:argType="com.example.foodie.data.GitHubRepo" />
+            android:name="recipe"
+            app:argType="com.example.foodie.data.Recipe" />
     </fragment>
 
     <fragment
-        android:id="@+id/bookmarked_repos"
-        android:name="com.example.foodie.ui.BookmarkedReposFragment"
-        android:label="@string/label_bookmarked_repos">
+        android:id="@+id/favorited_recipes"
+        android:name="com.example.foodie.ui.FavoritedRecipesFragment"
+        android:label="@string/label_favorited_recipes">
         <action
-            android:id="@+id/navigate_to_repo_detail"
-            app:destination="@id/repo_detail" />
+            android:id="@+id/navigate_to_recipe_detail"
+            app:destination="@id/recipe_detail" />
     </fragment>
-
-    <fragment
-        android:id="@+id/settings"
-        android:name="com.example.foodie.ui.SettingsFragment"
-        android:label="@string/label_settings" />
-
 </navigation>

@@ -9,8 +9,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.foodie.BuildConfig
 import com.example.foodie.R
 import com.google.android.material.navigation.NavigationView
+
+const val SPOONACULAR_API_KEY = BuildConfig.SPOONACULAR_API_KEY
 
 class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfig: AppBarConfiguration
