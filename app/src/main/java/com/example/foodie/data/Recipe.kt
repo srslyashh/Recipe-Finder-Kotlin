@@ -15,4 +15,8 @@ data class Recipe(
     val image: String,
 
     val imageType: String,
+
+    val readyInMinutes: Int,
+
+    val servings: Int
 ) : java.io.Serializable

@@ -18,6 +18,7 @@ interface SpoonacularService {
         @Query("type") type: String? = null,
         @Query("includeIngredients") includeIngredients: String? = null,
         @Query("excludeIngredients") excludeIngredients: String? = null,
+        @Query("addRecipeInformation") addRecipeInformation: Boolean = true
     ) : Response<RecipeResults>
 
     companion object {
