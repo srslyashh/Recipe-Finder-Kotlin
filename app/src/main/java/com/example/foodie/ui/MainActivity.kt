@@ -29,6 +29,7 @@ import com.example.foodie.data.Recipe
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.progressindicator.CircularProgressIndicator
 
+
 const val SPOONACULAR_API_KEY = BuildConfig.SPOONACULAR_API_KEY
 
 class MainActivity : AppCompatActivity() {
