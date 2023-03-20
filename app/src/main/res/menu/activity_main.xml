@@ -6,5 +6,11 @@
         android:id="@+id/action_favorite"
         android:icon="@drawable/ic_action_favorite_on"
         android:title="@string/action_favorites"
-        app:showAsAction="ifRoom" />ß
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_baseline_search_36"
+        android:title="@string/search"
+        app:showAsAction="ifRoom" />
+
 </menu>

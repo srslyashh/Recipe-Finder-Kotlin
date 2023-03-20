@@ -18,7 +18,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        
+
         buildConfigField("String", "SPOONACULAR_API_KEY", SPOONACULAR_API_KEY)
     }
 
