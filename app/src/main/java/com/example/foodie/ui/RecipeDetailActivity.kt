@@ -8,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -16,6 +17,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.foodie.R
 import com.example.foodie.data.Recipe
+import com.bumptech.glide.Glide
 
 const val EXTRA_FAVORITE_RECIPE = "FAVORITE_RECIPE"
 class RecipeDetailActivity : AppCompatActivity() {
@@ -23,16 +25,31 @@ class RecipeDetailActivity : AppCompatActivity() {
     private var recipes: Recipe? = null
     private val viewModel: FavoritedRecipesViewModel by viewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_favorite_detail)
+        setContentView(R.layout.activity_recipe_detail)     //reference to detail
 
         if (intent != null && intent.hasExtra(EXTRA_FAVORITE_RECIPE)) {
             recipes = intent.getSerializableExtra(EXTRA_FAVORITE_RECIPE) as Recipe
 
             findViewById<TextView>(R.id.tv_recipe_title).text = recipes!!.title
+
+            // Testing, Load the image using Glide
+            Glide.with(this)
+                .load(recipes!!.image)
+                .into(findViewById<ImageView>(R.id.iv_recipe_image))
+
+            findViewById<TextView>(R.id.tv_recipe_serving).text = recipes!!.servings.toString()
+
+
+            findViewById<TextView>(R.id.tv_recipe_time).text = recipes!!.readyInMinutes.toString()
+
+
+
         }
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu) : Boolean {
         menuInflater.inflate(R.menu.activity_favorite_detail, menu)
