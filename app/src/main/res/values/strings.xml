@@ -11,8 +11,7 @@
 
     <string name="search_error">Error fetching search results: %1$s</string>
 
-    <string name="action_share">Share</string>
-    <string name="share_text">Check out this recipe: %1$s TODO</string>
+    <string name="action_share">Share PDF</string>
 
     <string name="action_settings">Settings</string>
 
