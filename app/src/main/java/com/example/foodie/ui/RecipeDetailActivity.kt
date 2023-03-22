@@ -68,6 +68,19 @@ class RecipeDetailActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.tv_recipe_ingredients).text = ingredientString.toString()
 
 
+            val instructions = recipes!!.instructionSets
+
+            val instructionString = StringBuilder()
+            for (instructionSet in instructions) {
+                for (step in instructionSet.steps) {
+                    instructionString.append("${step.number}. ${step.step}\n")
+                }
+            }
+
+            findViewById<TextView>(R.id.tv_recipe_Instructions).text = instructionString.toString()
+
+
+
         }
     }
 
