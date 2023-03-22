@@ -30,8 +30,8 @@ class FavoritedRecipesActivity : AppCompatActivity() {
         favoritedRecipeRV.setHasFixedSize(true)
         favoritedRecipeRV.adapter = recipeListAdapter
 
-        viewModel.favoritedRecipes.observe(this) {
-            recipeListAdapter.updateSimpleRecipeList(it)
+        viewModel.favoritedRecipes.observe(this) {favoritedRecipes ->
+            recipeListAdapter.updateSimpleRecipeList(favoritedRecipes)
         }
     }
 

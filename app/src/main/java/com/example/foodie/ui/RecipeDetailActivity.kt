@@ -51,10 +51,10 @@ class RecipeDetailActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu) : Boolean {
+    override fun onCreateOptionsMenu(menu: Menu?) : Boolean {
         menuInflater.inflate(R.menu.activity_favorite_detail, menu)
 
-        val favorite = menu.findItem(R.id.action_favorite)
+        val favorite = menu?.findItem(R.id.action_favorite)
         viewModel.getFavoritedRecipeByTitle(recipes!!.title).observe(this) { favoritedRecipe ->
             when (favoritedRecipe) {
                 null -> {
