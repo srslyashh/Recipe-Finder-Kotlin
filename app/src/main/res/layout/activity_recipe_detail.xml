@@ -3,84 +3,108 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_margin="8dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/tv_recipe_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/tv_recipe_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/iv_recipe_image"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="20dp" />
 
+        <TextView
+            android:id="@+id/tv_recipe_serving"
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="195dp"
+            android:drawablePadding="4dp"
+            android:padding="16dp"
+            android:text="     servings"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_action_serving"
+            app:fontFamily="@font/poppins" />
 
-    <ImageView
-        android:id="@+id/iv_recipe_image"
-        android:layout_width="380dp"
-        android:layout_height="160dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="30dp"
-        />
+        <TextView
+            android:id="@+id/tv_recipe_time"
+            android:title=" mins"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="190dp"
+            android:layout_marginTop="195dp"
+            android:drawablePadding="4dp"
+            android:padding="16dp"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_action_time"
+            app:fontFamily="@font/poppins"
+            app:layout_constraintBottom_toTopOf="@id/tv_recipe_serving" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_recipe_serving">
 
-    <TextView
-        android:id="@+id/tv_recipe_serving"
-        android:layout_width="168dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="195dp"
-        android:drawablePadding="4dp"
-        android:padding="16dp"
-        android:text="     servings"
-        android:textSize="16sp"
-        app:drawableStartCompat="@drawable/ic_action_serving"
-        app:fontFamily="@font/poppins" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-
-    <TextView
-        android:id="@+id/tv_recipe_time"
-        android:title=" mins"
-        android:layout_width="181dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="190dp"
-        android:layout_marginTop="195dp"
-        android:drawablePadding="4dp"
-        android:padding="16dp"
-        android:textSize="16sp"
-        app:drawableStartCompat="@drawable/ic_action_time"
-        app:fontFamily="@font/poppins"
-        app:layout_constraintBottom_toTopOf="@id/tv_recipe_serving" />
-
-    <TextView
-        android:id="@+id/tv_recipe_ingredients"
-        android:text="Ingredients"
-        android:layout_width="186dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="295dp"
-        android:drawablePadding="4dp"
-        android:padding="16dp"
-        android:textSize="16sp"
-        app:fontFamily="@font/poppins"
-        app:layout_constraintBottom_toTopOf="@id/tv_recipe_serving" />
-
-
-
-    <TextView
-        android:id="@+id/tv_recipe_Instructions"
-        android:text="Instructions"
-        android:layout_width="186dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="495dp"
-        android:drawablePadding="4dp"
-        android:padding="16dp"
-        android:textSize="16sp"
-        app:fontFamily="@font/poppins"
-        app:layout_constraintBottom_toTopOf="@id/tv_recipe_serving" />
+                <TextView
+                    android:id="@+id/tv_ingredients_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Ingredients"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/poppins" />
 
 
 
+                <TextView
+                    android:id="@+id/tv_recipe_ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="15dp"
+                    android:drawablePadding="4dp"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/poppins" />
 
+                <TextView
+                    android:id="@+id/tv_instructions_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Instructions"
+                    android:textSize="18sp"
+                    app:fontFamily="@font/poppins" />
+
+                <TextView
+                    android:id="@+id/tv_recipe_Instructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="15dp"
+                    android:drawablePadding="4dp"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    app:fontFamily="@font"/>
+
+             </LinearLayout>
+     </ScrollView>
+    </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>

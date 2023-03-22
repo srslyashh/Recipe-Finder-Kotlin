@@ -9,17 +9,21 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
+
 import androidx.core.content.FileProvider
 import com.bumptech.glide.Glide
 import com.example.foodie.R
 import com.example.foodie.data.Recipe
 import java.io.File
 import java.io.FileOutputStream
+
+import com.example.foodie.data.Ingredient
 
 
 const val EXTRA_FAVORITE_RECIPE = "FAVORITE_RECIPE"
@@ -28,6 +32,10 @@ class RecipeDetailActivity : AppCompatActivity() {
     private var isFavorited = false
     private var recipes: Recipe? = null
     private val viewModel: FavoritedRecipesViewModel by viewModels()
+
+
+
+    private lateinit var ingredients: List<Ingredient>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +56,16 @@ class RecipeDetailActivity : AppCompatActivity() {
 
 
             findViewById<TextView>(R.id.tv_recipe_time).text = recipes!!.readyInMinutes.toString()
+
+
+            ingredients = recipes!!.ingredients
+
+            val ingredientString = StringBuilder()
+            for(ingredients in ingredients){
+                ingredientString.append(ingredients.toString())
+            }
+
+            findViewById<TextView>(R.id.tv_recipe_ingredients).text = ingredientString.toString()
 
 
         }
