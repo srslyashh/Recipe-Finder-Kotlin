@@ -9,14 +9,6 @@
         android:checkable="true"
         app:showAsAction="ifRoom"/>
 
-
-    <item
-        android:id="@+id/baseline_download"
-        android:icon="@drawable/baseline_download_24"
-        android:title="@string/baseline_download"
-        app:showAsAction="ifRoom"/>
-
-
     <item
         android:id="@+id/action_share"
         android:icon="@drawable/ic_action_share"
